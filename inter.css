@@ -1,0 +1,988 @@
+/* ------------------- la pagina principal -----------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Fuente */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1E3A52; /* Azul marino oscuro */
+    color: #fff; /* Color blanco para el texto general */
+    line-height: 1.6;
+  }
+  
+  .banner {
+    background-color: #000;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Animación de aparición de enlaces */
+  #container_items a {
+    color: #fff;
+    margin: 0 1.5rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(-10px); /* Mover hacia arriba */
+    animation: fadeInUp 0.5s forwards; /* Aplicar animación */
+    animation-delay: var(--delay); /* Retardo para el efecto de secuencia */
+  }
+  
+  #container_items a:hover {
+    color: #FFA500; /* Naranja suave */
+  }
+  
+  .header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    color: #0b0b0b; /* Color blanco para los títulos */
+  }
+  
+  /* Animación de aparición en la sección de contenido */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+    padding: 2rem;
+  }
+  
+  .container .content {
+    display: flex;
+    max-width: 1100px;
+    align-items: center;
+    background-color: #285586; /* Fondo azul marino oscuro */
+    padding: 2rem;
+    border-radius: 10px;
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Mover hacia abajo */
+    animation: fadeInUp 0.7s forwards; /* Aplicar animación */
+  }
+  
+  .content .image {
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Mover hacia abajo */
+    animation: fadeInUp 0.5s forwards; /* Aplicar animación */
+    animation-delay: 0.3s; /* Retardo para el efecto de secuencia */
+  }
+  
+  .content .image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px; /* Redondear esquinas */
+    animation: scaleAndRotate 0.6s ease forwards; /* Aplicar animación */
+    opacity: 0; /* Inicialmente oculto */
+  }
+  
+  .content .image img {
+    animation-delay: 0.5s; /* Retardo para la animación de las imágenes */
+  }
+  
+  .content .text {
+    padding: 1rem 2rem;
+    color: #151414; /* Color blanco para el texto */
+    font-size: 1.2rem;
+  }
+  
+  .text p {
+    font-size: 1.1rem;
+    text-align: justify;
+    margin-bottom: 1.5rem;
+    color: #fff; /* Aseguramos que el texto de los párrafos sea blanco */
+  }
+  
+  /* Fondo azul oscuro y centrado */
+  .header {
+    background-color: #ffffff; /* Azul marino */
+    padding: 1.5rem 0;
+    color: #f90606; /* Color blanco para el encabezado */
+  }
+  
+  .container_cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 2rem;
+  }
+  
+  /* Animación para las tarjetas */
+  .card {
+    background-color: #285f96;
+    padding: 2rem;
+    margin: 1rem;
+    width: 30%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Mover hacia abajo */
+    animation: fadeInUp 0.5s forwards; /* Aplicar animación */
+  }
+  
+  /* Títulos y texto en las tarjetas */
+  .card h3 {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    color: #FFA500; /* Naranja para títulos */
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #fff; /* Texto blanco en las tarjetas */
+    margin-top: 1rem;
+  }
+  
+  .card img {
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    animation: scaleAndRotate 0.6s ease forwards; /* Aplicar animación */
+    opacity: 0; /* Inicialmente oculto */
+  }
+  
+  /* Animación del pie de página */
+  footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    opacity: 0; /* Inicialmente oculto */
+    animation: fadeIn 0.5s forwards; /* Aplicar animación */
+  }
+  
+  /* Estilo de los enlaces en el pie de página */
+  footer a {
+    color: #FFA500;
+    margin: 0 1rem;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scaleAndRotate {
+    0% {
+      transform: scale(0.8) rotate(0deg); /* Inicialmente más pequeño y sin rotación */
+      opacity: 0; /* Inicialmente oculto */
+    }
+    100% {
+      transform: scale(1) rotate(360deg); /* Escala normal y rotación completa */
+      opacity: 1; /* Totalmente visible */
+    }
+  }
+  
+
+
+
+/* --------------------------------Sección de login------------------------------------------------------- */
+
+
+
+/* Estilo del contenedor de inicio de sesión */
+.login-page {
+    display: flex; /* Usamos flexbox para poner el formulario y la imagen uno al lado del otro */
+    height: 100vh; /* Altura completa de la ventana */
+}
+
+/* Estilo para el contenedor de inicio de sesión */
+.login-container {
+    background-color: #15548a; /* Mismo color que el fondo del resto del sitio */
+    color: #fff; /* Color blanco para el texto */
+    padding: 3rem; /* Aumentar el relleno interno */
+    border-radius: 10px;
+    max-width: 400px; /* Ancho máximo para el formulario, ajustado */
+    margin-left: 5%; /* Dejar un espacio en la izquierda */
+    margin-right: 5%; /* Espacio derecho para el centrado */
+    text-align: center; /* Centrar el texto */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+}
+
+/* Estilo para la imagen del lado derecho */
+.image-side {
+    flex: 1; /* La imagen ocupará el resto del espacio */
+    display: flex; /* Usamos flexbox para centrar la imagen */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    overflow: hidden; /* Para evitar que la imagen sobresalga */
+}
+
+/* Ajustamos la imagen para que se ajuste adecuadamente */
+.image-side img {
+    width: 80%; /* Ancho ajustado para que no sea tan grande */
+    height: auto; /* Ajustar la altura automáticamente */
+    max-height: 100%; /* Asegura que no exceda la altura del contenedor */
+    object-fit: cover; /* Mantiene la relación de aspecto de la imagen */
+}
+
+/* Estilo para el encabezado */
+.login-container h1 {
+    font-size: 2.5rem; /* Aumentar el tamaño del texto para el encabezado */
+    margin-bottom: 1rem; /* Margen inferior para separar del contenido */
+    color: #15f6d5;
+}
+
+/* Estilo para el párrafo */
+.login-container p {
+    font-size: 1.1rem; /* Tamaño del texto para párrafos */
+    margin-bottom: 1.5rem; /* Margen inferior para separar de otros elementos */
+}
+
+/* Estilo de los grupos de entrada */
+.input-group {
+    margin-bottom: 1.5rem; /* Aumentar margen inferior para separar los campos */
+}
+
+/* Estilo para las etiquetas */
+.input-group label {
+    display: block; /* Mostrar como bloque para que ocupen toda la línea */
+    margin-bottom: 0.5rem; /* Margen inferior para separar del campo */
+}
+
+/* Estilo para los campos de entrada */
+.input-group input {
+    width: 100%; /* Ancho completo */
+    padding: 0.75rem; /* Aumentar el relleno interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #ffffff; /* Color de fondo */
+    color: #100f0f; /* Color de texto */
+}
+
+/* Estilo para el botón */
+button {
+    background-color: #FFA500; /* Color naranja para el botón */
+    color: #fff; /* Color blanco para el texto del botón */
+    padding: 0.7rem 1.5rem; /* Relleno interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño del texto */
+    cursor: pointer; /* Cambiar cursor a mano */
+    transition: background-color 0.3s; /* Transición para el cambio de color */
+}
+
+/* Efecto hover para el botón */
+button:hover {
+    background-color: #faf8f5; /* Color más oscuro al pasar el cursor */
+}
+
+/* Estilo para enlaces */
+a {
+    color: #69db17; /* Color naranja para los enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayar al pasar el cursor */
+}
+
+/*----------------------------inicia sesion con redes sociales ------------------------------------------------------------*/
+
+
+.social-login {
+    margin-top: 2rem; /* Espacio superior para separar del formulario */
+    text-align: center; /* Centrar el texto */
+}
+
+.social-login h2 {
+    margin-bottom: 1rem; /* Margen inferior para el título */
+}
+
+.social-buttons {
+    display: flex; /* Usar flexbox para alinear los botones */
+    justify-content: center; /* Centrar los botones */
+    gap: 1rem; /* Espacio entre botones */
+}
+
+.social-button {
+    display: inline-block; /* Mostrar como bloque en línea */
+    padding: 0.7rem 1.5rem; /* Relleno interno para botones */
+    border-radius: 5px; /* Bordes redondeados */
+    color: #e0e0e0; /* Color de texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    transition: background-color 0.3s, transform 0.3s; /* Transición suave para el fondo */
+    font-size: 1rem; /* Tamaño de fuente */
+}
+
+/* Colores de fondo para cada red social */
+.social-button.facebook {
+    background-color: #30c1e6; /* Azul de Facebook */
+}
+.social-button.twitter {
+  background-color: #0040c0; /* Azul de twitter */
+}
+.social-button.instagram {
+  background-color: #833ab4;
+  background: linear-gradient(
+    to right,
+    #833ab4,#fd1d1d,#fcb045
+  ); /* Azul de instagram */
+}
+
+/* Efecto hover para los botones */
+.social-button:hover {
+    opacity: 0.9; /* Cambio de opacidad al pasar el cursor */
+    transform: scale(1.08); /* Escalado suave al pasar el cursor */
+}
+
+
+/*---------------------Sección registarme---------------------------------------------------------------------------------- */
+
+
+.registro-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 2rem 0;
+}
+
+.registro-container {
+    background-color: #15548a;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+
+.registro-container h1 {
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    margin: 1rem 0;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    width: calc(100% - 10px);
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #FFA500; /* Naranja */
+    color: #fff;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #efdc0e; /* Color más oscuro al pasar el mouse */
+}
+
+#resultadoIMC {
+  
+  color: #ffffff;
+  background-color: #27d53b;
+  border: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+/* *****************************chatbotflotante******************************* */
+.chatbot {
+    position: fixed;
+    bottom: 20px; /* Espaciado desde el fondo */
+    right: 20px; /* Espaciado desde la derecha */
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+}
+
+.chatbot-icon {
+    background-color: #FFA500; /* Color del botón flotante */
+    color: rgb(255, 255, 255); /* Color del texto */
+    border-radius: 50%; /* Botón redondeado */
+    width: 60px; /* Ancho del botón */
+    height: 60px; /* Altura del botón */
+    display: flex; /* Usar flexbox para centrar el icono */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+.chatbot-container {
+    display: none; /* Iniciar como oculto */
+    background-color: #f9f9f9; /* Color de fondo del chatbot */
+    border: 1px solid #ccc; /* Borde del chatbot */
+    border-radius: 10px; /* Bordes redondeados */
+    width: 300px; /* Ancho del chatbot */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    margin-top: 10px; /* Espaciado superior */
+}
+
+.chatbot-header {
+    background-color: #FFA500; /* Color del encabezado */
+    color: #fff; /* Color del texto en el encabezado */
+    padding: 10px; /* Espaciado interno */
+    display: flex; /* Usar flexbox para alinear elementos */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center; /* Centrar verticalmente */
+    border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+}
+
+.close-btn {
+    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+}
+
+.chatbot-messages {
+    display: block; /* Iniciar como visible */
+    padding: 10px; /* Espaciado interno */
+    max-height: 200px; /* Altura máxima */
+    overflow-y: auto; /* Scroll si excede la altura */
+    color: rgb(14, 14, 14);
+}
+
+.message {
+    margin: 5px 0; /* Margen entre mensajes */
+    padding: 8px; /* Espaciado interno en mensajes */
+    border-radius: 5px; /* Bordes redondeados para los mensajes */
+}
+
+.user-message {
+    background-color: #007bff; /* Color de fondo para mensajes del usuario */
+    color: white; /* Texto blanco para mensajes del usuario */
+    text-align: right; /* Alinear texto a la derecha */
+}
+
+.bot-message {
+    background-color: #ccc; /* Color de fondo para mensajes del bot */
+    text-align: left; /* Alinear texto a la izquierda */
+}
+
+.chatbot-input {
+    display: flex; /* Usar flexbox para el input y el botón */
+    padding: 10px; /* Espaciado interno */
+}
+
+.chatbot-input input {
+    flex: 1; /* Ocupa todo el espacio disponible */
+    padding: 8px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde del campo de entrada */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.chatbot-input button {
+    background-color: #FFA500; /* Color del botón */
+    color: rgb(16, 15, 15); /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 8px 12px; /* Espaciado interno */
+    margin-left: 5px; /* Margen entre el input y el botón */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+}
+
+.chatbot-input button:hover {
+    background-color: #ff8c00; /* Color más oscuro al pasar el mouse */
+}
+
+
+/* --------------------------------------------iniciar sesión----------------- */
+
+
+
+/* Estilos del botón "Iniciar sesión" */
+.btn-login {
+  display: inline-block;
+  background-color: #ffcc00; /* Fondo amarillo */
+  color: black; /* Texto negro */
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #ffcc00; /* Borde amarillo */
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.btn-login:hover {
+  background-color: rgb(255, 255, 255); /* Fondo negro en hover */
+  color: #141413; /* Texto amarillo en hover */
+  transform: translateY(-3px); /* Efecto de elevación */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+/*-----------------------------iniciar sesion--------------------------------*/
+/* Contenedor principal que incluye las tarjetas y el gráfico */
+.container-dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: transparent; /* Mantiene el fondo inicial */
+}
+
+/* Estilo para las tarjetas en la parte superior */
+.dashboard-cards {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
+}
+
+.dashboard-card {
+  flex: 1;
+  margin: 0 10px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-card span {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+}
+
+.card-habitos {
+  background-color: #ff6f6f; /* Rojo rosado */
+}
+
+.card-ejercicios {
+  background-color: #ffaa44; /* Naranja */
+}
+
+.card-alimentos {
+  background-color: #6671e0; /* Morado */
+}
+
+/* Estilo para el gráfico */
+.dashboard-chart {
+  width: 100%;
+  max-width: 800px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-chart h2 {
+  font-size: 1.5rem;
+  color: #0b0b0b; /* Texto oscuro */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+
+/* ------------------- Para el menú lateral --------------------------------*/
+
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #2c2c2c; /* Fondo oscuro para el menú */
+  width: 80px;
+  height: 100vh;
+  padding: 2rem 0;
+  position: fixed;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-family: 'Arial', sans-serif;
+  transition: color 0.3s;
+}
+
+.sidebar a:hover {
+  color: #ffa500; /* Color naranja al pasar el mouse */
+}
+
+/* Íconos del menú */
+.sidebar a i {
+  font-size: 1.5rem;
+}
+/* ----------------Estilo para hacer la imagen responsiva -------------*/
+.dashboard-chart .responsive-img {
+  width: 100%; /* La imagen ocupará todo el ancho disponible */
+  height: auto; /* Mantiene la proporción de la imagen */
+  max-width: 1000px; /* Si deseas limitar el tamaño máximo de la imagen */
+  display: block;
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  border-radius: 10px; /* Agrega esquinas redondeadas (opcional) */
+}
+/* --------------------------------IMC---------------------------------------*/
+
+/*-----------munuleral*/
+
+/*-------------imagen de imc */
+.imc-container {
+  
+  text-align: center; /* Centra el contenido dentro del contenedor */
+  
+  
+}
+
+.imc-container h2 {
+  font-size: 1.5rem; /* Tamaño del texto del encabezado */
+  color: #fcfcfc; /* Color del texto */
+  margin-bottom: 1.5rem; /* Espaciado inferior del encabezado */
+  opacity: 0; /* Inicialmente oculto */
+  transform: translateY(-20px) rotate(-5deg); /* Mover hacia arriba y rotar */
+  animation: fadeInRotate 0.5s forwards 0.2s; /* Animación con retardo */
+  
+  /* Estilos para el cuadro de texto */
+  background-color: rgba(14, 98, 176, 0.7); /* Fondo oscuro con transparencia */
+  padding: 1rem; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  display: inline-block; /* Permite aplicar padding y margin alrededor del texto */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra del cuadro */
+}
+
+.imc-container img {
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  max-width: 800px; /* Ancho máximo de la imagen */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada alrededor de la imagen */
+  opacity: 0; /* Inicialmente oculto */
+  transform: scale(0.8) rotate(5deg); /* Inicialmente más pequeño y rotado */
+  animation: scaleInRotate 0.6s forwards 0.4s; /* Animación con retardo */
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRotate {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px) rotate(-5deg);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0) rotate(0);
+  }
+}
+
+@keyframes scaleInRotate {
+  0% {
+      opacity: 0;
+      transform: scale(0.8) rotate(5deg);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1) rotate(0);
+  }
+}
+
+/*-----------------------perfil------------------*/
+
+.profile-container {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en una columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  padding: 2rem; /* Espaciado interno */
+  margin: 0 auto; /* Centra el contenedor en la página */
+}
+
+.profile-header {
+  margin-bottom: 2rem; /* Espaciado inferior del encabezado */
+}
+
+.profile-header h1 {
+  font-size: 2.5rem; /* Tamaño del encabezado */
+  color: #FFA500; /* Color del texto */
+  text-align: center; /* Centra el texto */
+}
+
+.user-info {
+  display: grid; /* Utiliza un diseño de cuadrícula */
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+  gap: 1rem; /* Espacio entre las tarjetas */
+  width: 100%; /* Toma todo el ancho disponible */
+  max-width: 800px; /* Ancho máximo para la cuadrícula */
+  margin: 0 auto; /* Centra la cuadrícula en la página */
+}
+
+.info-card {
+  background-color: #ededed; /* Color de fondo de las tarjetas */
+  padding: 1.5rem; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra alrededor de las tarjetas */
+  transition: transform 0.3s; /* Transición para el efecto de hover */
+}
+
+.info-card:hover {
+  transform: translateY(-5px); /* Levanta la tarjeta al pasar el mouse */
+}
+
+.info-card h2 {
+  color: #FFA500; /* Color del título */
+  margin-bottom: 0.5rem; /* Espaciado inferior del título */
+  font-size: 1.5rem; /* Tamaño del texto del título */
+}
+
+.info-card p {
+  font-size: 1.2rem; /* Tamaño del texto del valor */
+  margin: 0.5rem 0; /* Espaciado superior e inferior */
+  color: #000000; /* Color del texto */
+}
+
+.imc-category {
+  font-size: 1.3rem; /* Tamaño de la categoría IMC */
+  color: #14b114; /* Color del texto de la categoría */
+  margin-top: 0.5rem; /* Espaciado superior */
+  font-style: italic; /* Estilo en cursiva */
+}
+
+/*-----------------------------contacto------------------------*/
+
+
+/* Estilos para el contenedor del formulario de contacto */
+.contact-container {
+  width: 400px; /* Ancho del formulario */
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra alrededor */
+  position: fixed; /* Fijo en la pantalla */
+  bottom: 20px; /* Ajustado a la parte inferior */
+  right: 20px; /* Ajustado a la derecha */
+  display: none; /* Oculto por defecto */
+  flex-direction: column; /* Organiza los elementos en columna */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Encabezado del formulario */
+.contact-header {
+  background-color: #007bff; /* Color de fondo del encabezado */
+  color: white; /* Color del texto */
+  padding: 10px; /* Espaciado interno */
+  display: flex; /* Para alinear elementos en el encabezado */
+  justify-content: space-between; /* Espacio entre título y botón de cierre */
+  align-items: center; /* Centra verticalmente el contenido */
+  border-top-left-radius: 10px; /* Bordes redondeados en la esquina superior izquierda */
+  border-top-right-radius: 10px; /* Bordes redondeados en la esquina superior derecha */
+}
+
+/* Estilo del formulario */
+.contact-form {
+  padding: 20px; /* Espaciado interno */
+}
+
+/* Estilo de las etiquetas y campos del formulario */
+.contact-form label {
+  margin-top: 10px; /* Espaciado superior */
+  display: block; /* Muestra como bloque */
+  font-weight: bold; /* Negrita */
+}
+
+.contact-form input, 
+.contact-form textarea {
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  padding: 10px; /* Espaciado interno */
+  margin-top: 5px; /* Espaciado superior */
+  border: 1px solid #007bff; /* Borde azul */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Botón de enviar */
+.contact-form button {
+  background-color: #007bff; /* Fondo azul */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 10px 15px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  margin-top: 10px; /* Espaciado superior */
+}
+
+/* Botón de cerrar */
+.btn-close {
+  background: none; /* Sin fondo */
+  border: none; /* Sin borde */
+  color: white; /* Color blanco */
+  font-size: 1.5rem; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+}
+
+/*---------------------------------chat bot grande-------------------------*/
+/* Contenedor del área de trabajo */
+
+
+
+/* Estilos del chatbot, flotando hacia la derecha */
+#chatbot-section {
+  position: absolute;
+  right: 0; /* Mover el chatbot hacia la derecha */
+  width: 1440px; /* Ancho ajustado */
+  background-color: #a1cb19; /* Fondo del área del chatbot */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 1px solid #bbbaba;
+  height: 100%; /* Hacer que el chatbot ocupe toda la altura del área de trabajo */
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1); /* Agregar sombra para mayor separación */
+}
+
+.chat-header {
+  background-color: #1a09b7; /* Color verde de Roomi para el encabezado */
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  text-align: center;
+}
+
+.chat-body {
+  padding: 10px;
+  overflow-y: auto;
+  flex: 1;
+  background-color: #ffffff; /* Fondo blanco para el área de mensajes */
+}
+
+.message {
+  padding: 8px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  max-width: 80%;
+}
+
+.received {
+  background-color: #17387f; /* Color de los mensajes recibidos */
+  color: rgb(255, 255, 255);
+  margin-left: 0;
+}
+
+.sent {
+  background-color: #1dcb1d; /* Mensajes enviados con el verde de Roomi */
+  color: rgb(255, 255, 255);
+  margin-left: auto;
+}
+
+.chat-footer {
+  display: flex;
+  padding: 8px;
+  background-color: #e0e0e0; /* Color gris claro para el footer */
+}
+
+.chat-footer input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.chat-footer button {
+  padding: 8px 15px;
+  background-color: #eb960e; /* Botón de enviar con el color verde de Roomi */
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: 8px;
+  border-radius: 15px;
+}
+
+/* Clase para mostrar u ocultar el chatbot */
+.chatbot-hidden {
+  display: none;
+}
+
+/*--------------informacion sobre una burna rutina-----------------*/
+
+#healthy-habits-roomi, #exercise-roomi, #nutrition-roomi {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#healthy-habits-roomi h2, #exercise-roomi h2, #nutrition-roomi h2 {
+  color: #2a9d8f;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#healthy-habits-roomi p, #exercise-roomi p, #nutrition-roomi p {
+  color: #333;
+  font-size: 18px;
+  line-height: 1.6;
+
+}
+
+ol {
+  color: #333;
+  text-align: left;
+  margin: 10px 0;
+  padding-left: 40px;
+  font-size: 18px;
+}
+
+ol li {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  #healthy-habits-roomi, #exercise-roomi, #nutrition-roomi {
+      padding: 15px;
+      margin: 15px auto;
+  }
+
+  #healthy-habits-roomi h2, #exercise-roomi h2, #nutrition-roomi h2 {
+      font-size: 22px;
+  }
+
+  #healthy-habits-roomi p, #exercise-roomi p, #nutrition-roomi p {
+      font-size: 16px;
+  }
+
+  ol {
+      font-size: 16px;
+  }
+}
+

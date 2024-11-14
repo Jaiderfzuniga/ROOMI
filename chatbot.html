@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imagnes/RR.jpg" type="image/jpeg">
+    <title>Roomi Dashboard</title>
+    <link rel="stylesheet" href="inter.css"> <!-- Asegúrate de enlazar tu archivo CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script> <!-- Para los íconos -->
+</head>
+<body>
+    
+    <!-- Menú lateral -->
+    <div class="sidebar">
+        <a href="inter.html"><i class="fas fa-home"></i><br>Home</a>
+        <a href="IMC.html"><i class="fas fa-weight"></i><br>IMC</a> <!-- Botón IMC añadido -->
+        <a href="iniciasesion.html"><i class="fas fa-tachometer-alt"></i><br>Tu Proceso</a>
+        <a href="chatbot.html"><i class="fas fa-robot"></i><br>ChatBot</a>
+        <a href="perfil.html"><i class="fas fa-user"></i><br>Perfil</a>
+    </div>
+    <div class="content-area">
+        <div id="chatbot-section" class="chatbot-hidden">
+            <div class="chat-header">
+                <h2>Roomi Chat</h2>
+            </div>
+            <div class="chat-body">
+                <div class="message received">
+                    <p>Hola soy Roomi tu asistente personal, 
+                        que puedo hacer por ti!</p>
+                </div>
+                <div class="message sent">
+                    <p>Hola Roomi!</p>
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" placeholder="Escribe un mensaje..." />
+                <button>Enviar</button>
+            </div>
+        </div>
+    </div>
+    
+   
+</body>
+</html>    

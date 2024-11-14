@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="imagnes/RR.jpg" type="image/jpeg">
+    <title>Roomi</title>
+    <link rel="stylesheet" href="inter.css" />
+  </head>
+  <body>
+    <div class="banner">
+      <div class="navbar">
+        <div>
+          <a href="#" class="logo">
+            <img src="imagnes/Roomilish 1.svg" alt="Logo Roomi" />
+          </a>
+        </div>
+        <div id="container_items">
+          <a href="inter.html">Inicio</a>
+          <a href="sobrenosotros.html">Sobre Nosotros</a> <!-- Añadido id al destino -->
+          <a href="#contacto">Contacto</a> <!-- Mismo destino para Contacto -->
+          <a href="entrar.html">Inicio de sesión</a>
+        </div>
+        <div id="container_menu">
+          <input type="checkbox" id="checkbox" style="display:none" /> <!-- Checkbox añadido -->
+          <label for="checkbox">
+            <div class="hamburger hamburger1">
+              <span class="bar bar1"></span>
+              <span class="bar bar2"></span>
+              <span class="bar bar3"></span>
+              <span class="bar bar4"></span>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- First section roomi -->
+     <br>
+     <br>
+    <section>
+      <div class="container">
+        <div class="content">
+          <div class="image">
+            <img
+              src="imagnes/Roomilish 1-1.svg"
+              alt="Imagen representativa de Roomi Home"
+              width="500"
+              height="500"
+            />
+          </div>
+          <div class="text">
+            <p>
+                <br>
+                ¡Nos encantaría saber de ti! Si tienes alguna pregunta, comentario o necesitas más información sobre nuestros servicios, no dudes en ponerte en contacto con nosotros.
+                <br>Información de Contacto <br>
+                <br> Correo Electrónico: roomi@empresa.com <br>
+                Teléfono: +1 (234) 567-8901 <br>
+                Dirección: Calle Ejemplo 123, Ciudad, País <br>
+                Horario de Atención <br>
+                Lunes a Viernes: 9:00 AM - 5:00 PM <br>
+                Sábado: 10:00 AM - 2:00 PM <br>
+                Domingo: Cerrado  <br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+   
+
+    <!-- Header testimonials -->
+  
+       
+      <div class="chatbot">
+        <div class="chatbot-icon" onclick="toggleChat()">
+            chatbot
+        </div>
+        <div class="chatbot-container" id="chatbotContainer">
+            <div class="chatbot-header">
+                <span>ROOMI</span>
+                <span class="close-btn" onclick="toggleChat()">✖</span>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message">¿Cómo puedo ayudarte hoy?</div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="userInput" placeholder="Escribe tu mensaje..." />
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleChat() {
+            const chatContainer = document.getElementById('chatbotContainer');
+            chatContainer.style.display = chatContainer.style.display === 'none' ? 'block' : 'none';
+        }
+    
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const messageText = input.value.trim();
+    
+            if (messageText) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'message user-message';
+                messageDiv.textContent = messageText;
+                document.getElementById('chatbotMessages').appendChild(messageDiv);
+    
+                // Aquí puedes agregar la lógica para la respuesta del chatbot
+                const botResponse = document.createElement('div');
+                botResponse.className = 'message bot-message';
+                botResponse.textContent = "Gracias por tu mensaje: " + messageText; // Ejemplo de respuesta
+                document.getElementById('chatbotMessages').appendChild(botResponse);
+    
+                input.value = ''; // Limpiar el campo de entrada
+            }
+        }
+    </script>
+    
+    </section>
+
+    <script src="frontend/assets/js/main.js"></script>
+    <footer>
+      <div class="footer-container">
+          <div class="footer-links">
+              <a href="#">Acerca de nosotros</a>
+              <a href="#">Política de privacidad</a>
+              <a href="#">Servicio al cliente</a>
+          </div>
+          <div class="social-login">
+            <h2>Nuestras redes sociales:</h2>
+            <div class="social-buttons">
+                <a href="https://es-la.facebook.com/login.php/" class="social-button facebook">Facebook</a>
+                <a href="https://x.com/login?mx=2" class="social-button twitter">Twitter</a>
+                <a href="https://www.instagram.com/" class="social-button instagram">Instagram</a>
+            </div>
+        </div>
+      </div>
+  </footer>
+  
+  </body>
+</html>
+
+
