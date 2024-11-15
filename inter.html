@@ -188,33 +188,6 @@
         </div>
     </div>
     
-    <script>
-        function toggleChat() {
-            const chatContainer = document.getElementById('chatbotContainer');
-            chatContainer.style.display = chatContainer.style.display === 'none' ? 'block' : 'none';
-        }
-    
-        function sendMessage() {
-            const input = document.getElementById('userInput');
-            const messageText = input.value.trim();
-    
-            if (messageText) {
-                const messageDiv = document.createElement('div');
-                messageDiv.className = 'message user-message';
-                messageDiv.textContent = messageText;
-                document.getElementById('chatbotMessages').appendChild(messageDiv);
-    
-                // Aquí puedes agregar la lógica para la respuesta del chatbot
-                const botResponse = document.createElement('div');
-                botResponse.className = 'message bot-message';
-                botResponse.textContent = "Gracias por tu mensaje: " + messageText; // Ejemplo de respuesta
-                document.getElementById('chatbotMessages').appendChild(botResponse);
-    
-                input.value = ''; // Limpiar el campo de entrada
-            }
-        }
-    </script>
-    
     </section>
 
     <script src="frontend/assets/js/main.js"></script>
@@ -235,6 +208,9 @@
         </div>
       </div>
   </footer>
+
+  <script src="inter.Js"></script>
+
   
   </body>
 </html>
