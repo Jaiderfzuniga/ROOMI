@@ -4,16 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="imagnes/RR.jpg" type="image/jpeg">
-    <title>Registro - Roomi</title>
+    <title>ROOMI - Registrar</title>
     <link rel="stylesheet" href="inter.css" />
-    <script>
-        function calcularIMC() {
-            const peso = parseFloat(document.getElementById('peso').value);
-            const altura = parseFloat(document.getElementById('altura').value) / 100; // Convertir cm a metros
-            const imc = (peso / (altura * altura)).toFixed(2);
-            document.getElementById('resultadoIMC').innerText = `Tu IMC es: ${imc}`;
-        }
-    </script>
+  
 </head>
 <body>
     <div class="banner">
@@ -29,30 +22,20 @@
                 <a href="#">Contacto</a>
                 <a href="entrar.html">Inicio de sesión</a>
             </div>
-            <div id="container_menu">
-                <label for="checkbox">
-                    <div class="hamburger hamburger1">
-                        <span class="bar bar1"></span>
-                        <span class="bar bar2"></span>
-                        <span class="bar bar3"></span>
-                        <span class="bar bar4"></span>
-                    </div>
-                </label>
-            </div>
         </div>
     </div>
 
     <div class="registro-page">
         <div class="registro-container">
             <h1>Registro</h1>
-            <form onsubmit="calcularIMC(); return false;">
+            <form onsubmit="validarFormulario(event);">
                 <div class="input-group">
                     <label for="nombre">Nombre Completo:</label>
-                    <input type="text" id="nombre" name="nombre" required />
+                    <input type="text" id="nombre" name="nombre" maxlength="100" required />
                 </div>
                 <div class="input-group">
-                    <label for="nombre">Edad:</label>
-                    <input type="text" id="nombre" name="edad" required />
+                    <label for="edad">Edad:</label>
+                    <input type="text" id="edad" name="edad" required />
                 </div>
                 <div class="input-group">
                     <label for="correo">Correo Electrónico:</label>
@@ -72,7 +55,6 @@
             <p>¿Ya tienes una cuenta? <a href="entrar.html">Inicia sesión aquí</a></p>
         </div>
     </div>
-
-    <script src="frontend/assets/js/main.js"></script>
+     <script src="inter.Js"></script>
 </body>
 </html>
