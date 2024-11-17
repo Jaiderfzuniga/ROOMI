@@ -198,7 +198,7 @@
 
 
 
-/* --------------------------------Sección de login------------------------------------------------------- */
+/* ******************************************** Sección de login *********************************************** */
 
 
 
@@ -299,7 +299,7 @@ a:hover {
     text-decoration: underline; /* Subrayar al pasar el cursor */
 }
 
-/*----------------------------inicia sesion con redes sociales ------------------------------------------------------------*/
+/************************************ inicia sesion con redes sociales ***************************************************/
 
 
 .social-login {
@@ -349,7 +349,7 @@ a:hover {
 }
 
 
-/*---------------------Sección registarme---------------------------------------------------------------------------------- */
+/************************************** Sección registarme *********************************************** */
 
 
 .registro-page {
@@ -414,7 +414,14 @@ button:hover {
     font-size: 1.8rem;
     font-weight: bold;
 }
-/* *****************************chatbotflotante******************************* */
+
+
+
+/* ********************************* chatbotflotante ********************************************** */
+
+
+
+
 .chatbot {
     position: fixed;
     bottom: 20px; /* Espaciado desde el fondo */
@@ -511,7 +518,7 @@ button:hover {
 }
 
 
-/* --------------------------------------------iniciar sesión----------------- */
+/******************************************** iniciar sesión *****************************************- */
 
 
 
@@ -535,8 +542,15 @@ button:hover {
   transform: translateY(-3px); /* Efecto de elevación */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
 }
-/*-----------------------------iniciar sesion--------------------------------*/
+
+
+
+/******************************************** iniciar sesion **************************************************/
 /* Contenedor principal que incluye las tarjetas y el gráfico */
+
+
+
+
 .container-dashboard {
   display: flex;
   flex-direction: column;
@@ -607,7 +621,8 @@ button:hover {
 }
 
 
-/* ------------------- Para el menú lateral --------------------------------*/
+/************************************** Para el menú lateral ****************************************/
+
 
 
 .sidebar {
@@ -647,11 +662,15 @@ button:hover {
   margin: 0 auto; /* Centra la imagen horizontalmente */
   border-radius: 10px; /* Agrega esquinas redondeadas (opcional) */
 }
-/* --------------------------------IMC---------------------------------------*/
 
-/*-----------munuleral*/
 
-/*-------------imagen de imc */
+
+
+/* *********************************  IMC  *************************************************/
+
+
+
+
 .imc-container {
   
   text-align: center; /* Centra el contenido dentro del contenedor */
@@ -720,7 +739,10 @@ button:hover {
   }
 }
 
-/*-----------------------perfil------------------*/
+
+/*************************************  Perfil *****************************************************/
+
+
 
 .profile-container {
   display: flex;
@@ -780,7 +802,10 @@ button:hover {
   font-style: italic; /* Estilo en cursiva */
 }
 
-/*-----------------------------contacto------------------------*/
+
+
+/*****************************************  Contacto  ***************************************/
+
 
 
 /* Estilos para el contenedor del formulario de contacto */
@@ -850,16 +875,17 @@ button:hover {
   cursor: pointer; /* Cambia el cursor al pasar el mouse */
 }
 
-/*---------------------------------chat bot grande-------------------------*/
-/* Contenedor del área de trabajo */
+
+
+/************************************** Chat bot grande  *************************************/
 
 
 
-/* Estilos del chatbot, flotando hacia la derecha */
+
 #chatbot-section {
   position: absolute;
   right: 0; /* Mover el chatbot hacia la derecha */
-  width: 1440px; /* Ancho ajustado */
+  width: calc(100% - 80px); /* Ancho ajustado */
   background-color: #a1cb19; /* Fondo del área del chatbot */
   display: flex;
   flex-direction: column;
@@ -930,7 +956,11 @@ button:hover {
   display: none;
 }
 
+
+
 /*--------------informacion sobre una burna rutina-----------------*/
+
+
 
 #healthy-habits-roomi, #exercise-roomi, #nutrition-roomi {
   padding: 20px;
